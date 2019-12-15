@@ -6,14 +6,16 @@ void swap(int arr[][3]);
 int check(int arr[][3])
 {
 	int c=0;
-	for(int i=0; i<3; i++) {
-      for(int j=0;j<3;j++) {
+	for(int i=0; i<3; i++) 
+	{
+      for(int j=0;j<3;j++) 
+	  {
       	if(arr[i][j]==final[i][j])
       	{
       		c++;
       	}
-   }
-   cout<<"Value of C is: "<<c;
+   		}
+   	}
    if(c==9)
    {
    	return 1;
@@ -22,7 +24,6 @@ int check(int arr[][3])
    {
    	return 0;
    }
-}
 }
 void display(int arr[][3])
 {
@@ -56,20 +57,27 @@ void swap(int arr[][3])
       for(j=0;j<3;j++) {
         if (arr[i][j]==-1)
         {
-        	cout<<"\n-1 found at row "<<i<<" and column "<<j;
         	row=i;
         	column=j;
         }
    }
 }
-cout<<"\nPossible swappable elements in column:(row numbers shows) "<<arr[row+1][column]<<"  "<<arr[row-1][column];
-cout<<"\nPossible swappable elements in row:(column numbers shown) "<<arr[row][column+1]<<"  "<<arr[row][column-1];
-
 int arr2[3][3];
 	for(i=0; i<3; i++) {
       for(j=0;j<3;j++) {
       	arr2[i][j]=arr[i][j];
    }
+}
+
+if (check(arr2)==0)
+{
+    swap(arr2);
+    display(arr2);
+}
+else
+{
+	cout<<"\nThe Final Array is: \n";
+	display(arr2);
 }
 
 //swap#1
